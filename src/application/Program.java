@@ -3,6 +3,8 @@ package application;
 import db.DB;
 import db.DbIntegrityException;
 import db.dbException;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -19,7 +21,9 @@ public class Program {
 
         Seller seller = new Seller(obj, 3000.0, new Date(), "pedro@gmail.com.br", "Pedro",  21);
 
-        System.out.println(obj);
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+
+        System.out.println(seller);
 
     }
 }
